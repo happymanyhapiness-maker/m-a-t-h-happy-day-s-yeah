@@ -1,7 +1,5 @@
-// ===== 進捗読み込み =====
-let currentIndex = 0;
-
-const savedIndexIndex !== null) {const savedIndex = localStorage.getItem("zukei-progress");
+// ===== 進捗読み込み =====// savedIndex = localStorage.getItem("zukei-progress");
+if (savedIndex !== null) {
   currentIndex = Number(savedIndex);
 }
 
@@ -146,3 +144,5 @@ resetBtn.addEventListener("click", () => {
 
 // ===== 初期表示 =====
 renderQuestion();
+let currentIndex = 0;
+

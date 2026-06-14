@@ -1,46 +1,7 @@
-// ===== 進捗読み込み =====// savedIndex = localStorage.getItem("zukei-progress");
-if (savedIndex !== null) {
-  currentIndex = Number(savedIndex);
-}
+// ===== 進捗読み込み =====
+let currentIndex = 0;
 
-// ===== 要素取得 =====
-const levelBadge = document.getElementById("levelBadge");
-const metaText = document.getElementById("metaText");
-const questionText = document.getElementById("questionText");
-const thinkingPrompt = document.getElementById("thinkingPrompt");
-const thinkingChoices = document.getElementById("thinkingChoices");
-const thinkingResult = document.getElementById("thinkingResult");
-const answerSection = document.getElementById("answerSection");
-const answerPrompt = document.getElementById("answerPrompt");
-const answerChoices = document.getElementById("answerChoices");
-const answerResult = document.getElementById("answerResult");
-const checkThinkingBtn = document.getElementById("checkThinkingBtn");
-const checkAnswerBtn = document.getElementById("checkAnswerBtn");
-const nextBtn = document.getElementById("nextBtn");
-const resetBtn = document.getElementById("resetBtn");
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
-
-// ===== 問題表示 =====
-function renderQuestion() {
-  const q = zukeiAQuestions[currentIndex];
-
-  levelBadge.textContent = q.level;
-  metaText.textContent = `${q.level} / Q${q.id}`;
-  questionText.textContent = q.question;
-  thinkingPrompt.textContent = q.thinkingPrompt;
-  answerPrompt.textContent = q.answerPrompt;
-
-  thinkingChoices.innerHTML = "";
-  answerChoices.innerHTML = "";
-
-  q.thinkingChoices.forEach((choice, index) => {
-    thinkingChoices.innerHTML += `
-      <div class="choice-item">
-        <label>
-          <input type="radio" name="thinking" value="${index}">
-          <span>${choice}</span>
-        </label>
+const </label>const savedIndex = localStorage.getItem("zukei-progress");
       </div>
     `;
   });
@@ -56,7 +17,6 @@ function renderQuestion() {
     `;
   });
 
-  // リセット表示
   thinkingResult.className = "feedback";
   thinkingResult.textContent = "";
   answerResult.className = "feedback";
@@ -128,7 +88,6 @@ nextBtn.addEventListener("click", () => {
   if (currentIndex < zukeiAQuestions.length - 1) {
     currentIndex++;
 
-    // ✅ 保存
     localStorage.setItem("zukei-progress", currentIndex);
 
     renderQuestion();
@@ -144,5 +103,44 @@ resetBtn.addEventListener("click", () => {
 
 // ===== 初期表示 =====
 renderQuestion();
-let currentIndex = 0;
+if (savedIndex !== null) {
+  currentIndex = Number(savedIndex);
+}
 
+// ===== 要素取得 =====
+const levelBadge = document.getElementById("levelBadge");
+const metaText = document.getElementById("metaText");
+const questionText = document.getElementById("questionText");
+const thinkingPrompt = document.getElementById("thinkingPrompt");
+const thinkingChoices = document.getElementById("thinkingChoices");
+const thinkingResult = document.getElementById("thinkingResult");
+const answerSection = document.getElementById("answerSection");
+const answerPrompt = document.getElementById("answerPrompt");
+const answerChoices = document.getElementById("answerChoices");
+const answerResult = document.getElementById("answerResult");
+const checkThinkingBtn = document.getElementById("checkThinkingBtn");
+const checkAnswerBtn = document.getElementById("checkAnswerBtn");
+const nextBtn = document.getElementById("nextBtn");
+const resetBtn = document.getElementById("resetBtn");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+
+// ===== 問題表示 =====
+function renderQuestion() {
+  const q = zukeiAQuestions[currentIndex];
+
+  levelBadge.textContent = q.level;
+  metaText.textContent = `${q.level} / Q${q.id}`;
+  questionText.textContent = q.question;
+  thinkingPrompt.textContent = q.thinkingPrompt;
+  answerPrompt.textContent = q.answerPrompt;
+
+  thinkingChoices.innerHTML = "";
+  answerChoices.innerHTML = "";
+
+  q.thinkingChoices.forEach((choice, index) => {
+    thinkingChoices.innerHTML += `
+      <div class="choice-item">
+        <label>
+          <input type="radio" name="thinking" value="${index}">
+          <span>${choice}</span>

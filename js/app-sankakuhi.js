@@ -1,7 +1,6 @@
 let currentIndex = 0;
 
-const levelBadge = document.getElementById("levelBadge");
-const metaText = document.getElementById("metaText");
+const level metaText = document.getElementById("metaText");const levelBadge = document.getElementById("levelBadge");
 const questionText = document.getElementById("questionText");
 const thinkingPrompt = document.getElementById("thinkingPrompt");
 const thinkingChoices = document.getElementById("thinkingChoices");
@@ -119,7 +118,7 @@ nextBtn.addEventListener("click", () => {
     currentIndex++;
     renderQuestion();
   } else {
-    alert("三角比ドリルおつかれさま！");
+    alert("三角比30問おつかれさま！");
   }
 });
 

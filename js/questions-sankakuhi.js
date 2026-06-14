@@ -22,7 +22,6 @@ const sankakuhiQuestions = [
     correctAnswer: 0,
     explanation: "S = 1/2 × 6 × 8 × sin30° = 12"
   },
-
   {
     id: 2,
     level: "Lv1",
@@ -46,7 +45,6 @@ const sankakuhiQuestions = [
     correctAnswer: 0,
     explanation: "S = 1/2 × 5 × 7 × sin60° = 35√3/4"
   },
-
   {
     id: 3,
     level: "Lv1",

@@ -1,7 +1,7 @@
 // ===== 進捗読み込み =====
 let currentIndex = 0;
 
-const savedIndex = localStorage) {const savedIndex = localStorage.getItem("zukei-progress");
+const savedIndex = localStorage.getItem("zukei-progress");
   currentIndex = Number(savedIndex);
 }
 

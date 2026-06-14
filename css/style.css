@@ -479,3 +479,18 @@ body {
   font-weight: bold;
   opacity: 0.9;
 }
+.reset-button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #444;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.reset-button:active {
+  background: #222;
+}

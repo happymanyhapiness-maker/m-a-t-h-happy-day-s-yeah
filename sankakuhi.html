@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>三角比ドリル</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a href="index.html" class="back-link">← 戻る</a>
+      <div>
+        <h1>三角比ドリル</h1>
+        <p id="metaText">Lv1 / Q1</p>
+      </div>
+    </header>
+
+    <section class="card question-card">
+      <div class="pill" id="levelBadge">Lv1</div>
+      <h2 id="questionTitle">問題</h2>
+      <p id="questionText"></p>
+    </section>
+
+    <section class="card">
+      <h3>① 考え方を選ぶ</h3>
+      <p id="thinkingPrompt"></p>
+      <div id="thinkingChoices" class="choice-list"></div>
+      <button id="checkThinkingBtn" class="btn primary">考え方を判定する</button>
+      <div id="thinkingResult" class="feedback"></div>
+    </section>
+
+    <section class="card hidden" id="answerSection">
+      <h3>② 答えを選ぶ</h3>
+      <p id="answerPrompt"></p>
+      <div id="answerChoices" class="choice-list"></div>
+      <button id="checkAnswerBtn" class="btn primary">答えを判定する</button>
+      <div id="answerResult" class="feedback"></div>
+    </section>
+
+    <section class="card footer-card">
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="progressText">1 / 30</p>
+      </div>
+
+      <div class="button-row">
+        <button id="nextBtn" class="btn secondary" disabled>次の問題へ</button>
+        <button id="resetBtn" class="btn ghost">この問題をやり直す</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/questions-sankakuhi.js"></script>
+  <script src="js/app-sankakuhi.js"></script>
+</body>
+</html>

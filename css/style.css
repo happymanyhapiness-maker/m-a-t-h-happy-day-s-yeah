@@ -1,204 +1,189 @@
-:root {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --text: #1f2937;
-  --sub: #6b7280;
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --ok-bg: #ecfdf5;
-  --ok-text: #166534;
-  --ng-bg: #fef2f2;
-  --ng-text: #991b1b;
-  --border: #e5e7eb;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  --radius: 18px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* ==== 基本 ==== */
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
 }
 
-.home,
+/* ==== メイン幅 ==== */
 .app-shell {
-  max-width: 760px;
+  max-width: 640px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 12px;
 }
 
-.home-header,
+/* ==== ヘッダー ==== */
 .topbar {
-  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 12px;
+  border-radius: 14px;
 }
 
-.home-header h1,
 .topbar h1 {
-  margin: 0 0 6px;
-  font-size: 1.6rem;
-}
-
-.home-header p,
-.topbar p,
-#questionText,
-#thinkingPrompt,
-#answerPrompt,
-.feedback,
-.progress-wrap p {
-  line-height: 1.7;
+  font-size: 18px;
+  margin: 0;
 }
 
 .back-link {
-  display: inline-block;
-  margin-bottom: 8px;
-  color: var(--primary);
+  color: white;
   text-decoration: none;
-  font-weight: 700;
+  font-size: 14px;
 }
 
-.menu-grid {
-  display: grid;
-  gap: 14px;
-}
-
-.menu-card,
+/* ==== カード ==== */
 .card {
-  background: var(--card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 18px;
-  border: 1px solid var(--border);
+  background: white;
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 14px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
 }
 
-.menu-card {
-  text-decoration: none;
-  color: inherit;
+/* ==== 問題 ==== */
+.question-card h2 {
+  font-size: 18px;
+  margin-bottom: 6px;
 }
 
-.menu-card h2 {
-  margin: 0 0 8px;
-  font-size: 1.1rem;
+#questionText {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
+/* ==== レベルタグ ==== */
 .pill {
   display: inline-block;
-  padding: 6px 10px;
-  background: #e0ecff;
-  color: var(--primary-dark);
+  background: #2563eb;
+  color: white;
+  padding: 4px 10px;
   border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-size: 12px;
+  margin-bottom: 6px;
 }
 
-.choice-list {
-  display: grid;
-  gap: 10px;
-  margin: 14px 0 16px;
-}
-
+/* ==== 選択肢 ==== */
 .choice-item {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 12px 14px;
-  background: #fff;
+  margin-bottom: 8px;
 }
 
 .choice-item label {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
+  display: block;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
   cursor: pointer;
-  font-size: 1rem;
-  line-height: 1.6;
+  transition: all 0.2s;
+  font-size: 15px;
 }
 
+/* タップしやすく */
+.choice-item input {
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+.choice-item label:hover {
+  background: #e0f2fe;
+}
+
+/* ==== ボタン ==== */
 .btn {
   width: 100%;
+  padding: 14px;
+  border-radius: 12px;
   border: none;
-  border-radius: 14px;
-  padding: 13px 16px;
-  font-size: 1rem;
-  font-weight: 700;
-  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
   margin-top: 8px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+/* 押しやすい色 */
 .btn.primary {
-  background: var(--primary);
-  color: #fff;
+  background: #3b82f6;
+  color: white;
 }
 
 .btn.secondary {
-  background: #eef2ff;
-  color: #3730a3;
+  background: #10b981;
+  color: white;
 }
 
 .btn.ghost {
-  background: #fff;
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: #e5e7eb;
 }
 
+/* 押した感 */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* ==== フィードバック ==== */
 .feedback {
-  margin-top: 14px;
-  padding: 14px;
-  border-radius: 14px;
-  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
 }
 
 .feedback.ok {
-  display: block;
-  background: var(--ok-bg);
-  color: var(--ok-text);
+  background: #d1fae5;
+  color: #065f46;
 }
 
 .feedback.ng {
-  display: block;
-  background: var(--ng-bg);
-  color: var(--ng-text);
+  background: #fee2e2;
+  color: #7f1d1d;
 }
 
-.hidden {
-  display: none;
-}
-
-.button-row {
-  display: grid;
-  gap: 10px;
-}
-
+/* ==== 進捗 ==== */
 .progress-wrap {
-  margin-bottom: 14px;
+  margin-top: 6px;
 }
 
 .progress-bar {
   width: 100%;
-  height: 12px;
+  height: 10px;
   background: #e5e7eb;
   border-radius: 999px;
   overflow: hidden;
-  margin-bottom: 8px;
 }
 
 .progress-fill {
-  width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #2563eb, #38bdf8);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+  transition: width 0.3s;
 }
 
-@media (min-width: 768px) {
-  .button-row {
-    grid-template-columns: 1fr 1fr;
+/* ==== ボタン横並び ==== */
+.button-row {
+  display: flex;
+  gap: 8px;
+}
+
+/* ==== 非表示 ==== */
+.hidden {
+  display: none;
+}
+
+/* ==== スマホ強化 ==== */
+@media (max-width: 480px) {
+  .card {
+    padding: 14px;
   }
 
   .btn {
-    width: auto;
+    font-size: 16px;
+  }
+
+  #questionText {
+    font-size: 16px;
   }
 }

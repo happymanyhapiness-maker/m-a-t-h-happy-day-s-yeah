@@ -1,5 +1,11 @@
+// ===== 進捗読み込み =====
 let currentIndex = 0;
 
+const savedIndexIndex !== null) {const savedIndex = localStorage.getItem("zukei-progress");
+  currentIndex = Number(savedIndex);
+}
+
+// ===== 要素取得 =====
 const levelBadge = document.getElementById("levelBadge");
 const metaText = document.getElementById("metaText");
 const questionText = document.getElementById("questionText");
@@ -17,6 +23,7 @@ const resetBtn = document.getElementById("resetBtn");
 const progressFill = document.getElementById("progressFill");
 const progressText = document.getElementById("progressText");
 
+// ===== 問題表示 =====
 function renderQuestion() {
   const q = zukeiAQuestions[currentIndex];
 
@@ -51,7 +58,7 @@ function renderQuestion() {
     `;
   });
 
-  // リセット
+  // リセット表示
   thinkingResult.className = "feedback";
   thinkingResult.textContent = "";
   answerResult.className = "feedback";
@@ -62,6 +69,7 @@ function renderQuestion() {
   updateProgress();
 }
 
+// ===== 進捗バー =====
 function updateProgress() {
   const total = zukeiAQuestions.length;
   const current = currentIndex + 1;
@@ -69,6 +77,7 @@ function updateProgress() {
   progressFill.style.width = `${(current / total) * 100}%`;
 }
 
+// ===== 思考チェック =====
 checkThinkingBtn.addEventListener("click", () => {
   const q = zukeiAQuestions[currentIndex];
   const selected = document.querySelector('input[name="thinking"]:checked');
@@ -92,6 +101,7 @@ checkThinkingBtn.addEventListener("click", () => {
   }
 });
 
+// ===== 答えチェック =====
 checkAnswerBtn.addEventListener("click", () => {
   const q = zukeiAQuestions[currentIndex];
   const selected = document.querySelector('input[name="answer"]:checked');
@@ -115,17 +125,24 @@ checkAnswerBtn.addEventListener("click", () => {
   }
 });
 
+// ===== 次の問題 =====
 nextBtn.addEventListener("click", () => {
   if (currentIndex < zukeiAQuestions.length - 1) {
     currentIndex++;
+
+    // ✅ 保存
+    localStorage.setItem("zukei-progress", currentIndex);
+
     renderQuestion();
   } else {
     alert("図形の性質30問おつかれさま！");
   }
 });
 
+// ===== やり直し =====
 resetBtn.addEventListener("click", () => {
   renderQuestion();
 });
 
+// ===== 初期表示 =====
 renderQuestion();

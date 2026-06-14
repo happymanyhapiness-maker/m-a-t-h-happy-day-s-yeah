@@ -126,5 +126,3 @@ nextBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   renderQuestion();
 });
-
-renderQuestion();

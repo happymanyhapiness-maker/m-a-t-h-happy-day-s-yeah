@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ŽOŠp”äƒhƒŠƒ‹</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ä¸‰è§’æ¯”ãƒ‰ãƒªãƒ«</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <main class="app-shell">
     <header class="topbar">
-      <a href="index.html" class="back-link">© –ß‚é</a>
+	<a class="back-link" href="./index.html">â† æˆ»ã‚‹</a>
       <div>
-        <h1>ŽOŠp”äƒhƒŠƒ‹</h1>
+        <h1>ä¸‰è§’æ¯”ãƒ‰ãƒªãƒ«</h1>
         <p id="metaText">Lv1 / Q1</p>
       </div>
     </header>
 
     <section class="card question-card">
       <div class="pill" id="levelBadge">Lv1</div>
-      <h2 id="questionTitle">–â‘è</h2>
+      <h2 id="questionTitle">å•é¡Œ</h2>
       <p id="questionText"></p>
     </section>
 
     <section class="card">
-      <h3>‡@ l‚¦•û‚ð‘I‚Ô</h3>
+      <h3>â‘  è€ƒãˆæ–¹ã‚’é¸ã¶</h3>
       <p id="thinkingPrompt"></p>
       <div id="thinkingChoices" class="choice-list"></div>
-      <button id="checkThinkingBtn" class="btn primary">l‚¦•û‚ð”»’è‚·‚é</button>
+      <button id="checkThinkingBtn" class="btn primary">è€ƒãˆæ–¹ã‚’åˆ¤å®šã™ã‚‹</button>
       <div id="thinkingResult" class="feedback"></div>
     </section>
 
     <section class="card hidden" id="answerSection">
-      <h3>‡A “š‚¦‚ð‘I‚Ô</h3>
+      <h3>â‘¡ ç­”ãˆã‚’é¸ã¶</h3>
       <p id="answerPrompt"></p>
       <div id="answerChoices" class="choice-list"></div>
-      <button id="checkAnswerBtn" class="btn primary">“š‚¦‚ð”»’è‚·‚é</button>
+      <button id="checkAnswerBtn" class="btn primary">ç­”ãˆã‚’åˆ¤å®šã™ã‚‹</button>
       <div id="answerResult" class="feedback"></div>
     </section>
 
@@ -47,13 +47,14 @@
       </div>
 
       <div class="button-row">
-        <button id="nextBtn" class="btn secondary" disabled>ŽŸ‚Ì–â‘è‚Ö</button>
-        <button id="resetBtn" class="btn ghost">‚±‚Ì–â‘è‚ð‚â‚è’¼‚·</button>
+        <button id="nextBtn" class="btn secondary" disabled>æ¬¡ã®å•é¡Œã¸</button>
+        <button id="resetBtn" class="btn ghost">ã“ã®å•é¡Œã‚’ã‚„ã‚Šç›´ã™</button>
       </div>
     </section>
   </main>
 
-  <script src="js/questions-sankakuhi.js"></script>
-  <script src="js/app-sankakuhi.js"></script>
+<script src="./js/questions-sankakuhi.js"></script>
+<script src="./js/app-sankakuhi.js"></script>
 </body>
 </html>
+``

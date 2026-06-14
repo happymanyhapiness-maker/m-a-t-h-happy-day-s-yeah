@@ -1,4 +1,7 @@
-// ===== 進捗読み込み =====// ===== 進捗読み込みStorage.getItem("sankaku-progress");
+// ===== 進捗読み込み =====
+let currentIndex = 0;
+
+const savedIndex = localStorage.getItem("sankaku-progress");
 if (savedIndex !== null) {
   currentIndex = Number(savedIndex);
 }
@@ -127,7 +130,7 @@ nextBtn.addEventListener("click", () => {
   if (currentIndex < sankakuhiQuestions.length - 1) {
     currentIndex++;
 
-    // ✅ ここで保存
+    // 保存
     localStorage.setItem("sankaku-progress", currentIndex);
 
     renderQuestion();
@@ -143,5 +146,4 @@ resetBtn.addEventListener("click", () => {
 
 // ===== 初期表示 =====
 renderQuestion();
-let currentIndex = 0;
-
+``

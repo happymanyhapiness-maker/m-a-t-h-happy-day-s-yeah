@@ -18,7 +18,7 @@ const progressFill = document.getElementById("progressFill");
 const progressText = document.getElementById("progressText");
 
 function renderQuestion() {
-  const q = sankakuhiQuestions[currentIndex];
+  const q = sankakuhiQuestions[currentIndex]; // ← 修正
 
   levelBadge.textContent = q.level;
   metaText.textContent = `${q.level} / Q${q.id}`;
@@ -119,7 +119,7 @@ nextBtn.addEventListener("click", () => {
     currentIndex++;
     renderQuestion();
   } else {
-    alert("三角比30問おつかれさま！ 次は数学Aの図形の性質ページを作ろう。");
+    alert("三角比30問おつかれさま！");
   }
 });
 

@@ -1,5 +1,9 @@
-let currentIndex = 0;
+// ===== 進捗読み込み =====// ===== 進捗読み込みStorage.getItem("sankaku-progress");
+if (savedIndex !== null) {
+  currentIndex = Number(savedIndex);
+}
 
+// ===== 要素取得 =====
 const levelBadge = document.getElementById("levelBadge");
 const metaText = document.getElementById("metaText");
 const questionText = document.getElementById("questionText");
@@ -17,6 +21,7 @@ const resetBtn = document.getElementById("resetBtn");
 const progressFill = document.getElementById("progressFill");
 const progressText = document.getElementById("progressText");
 
+// ===== 問題表示 =====
 function renderQuestion() {
   const q = sankakuhiQuestions[currentIndex];
 
@@ -61,6 +66,7 @@ function renderQuestion() {
   updateProgress();
 }
 
+// ===== 進捗バー =====
 function updateProgress() {
   const total = sankakuhiQuestions.length;
   const current = currentIndex + 1;
@@ -68,6 +74,7 @@ function updateProgress() {
   progressFill.style.width = `${(current / total) * 100}%`;
 }
 
+// ===== 思考チェック =====
 checkThinkingBtn.addEventListener("click", () => {
   const q = sankakuhiQuestions[currentIndex];
   const selected = document.querySelector('input[name="thinking"]:checked');
@@ -91,6 +98,7 @@ checkThinkingBtn.addEventListener("click", () => {
   }
 });
 
+// ===== 答えチェック =====
 checkAnswerBtn.addEventListener("click", () => {
   const q = sankakuhiQuestions[currentIndex];
   const selected = document.querySelector('input[name="answer"]:checked');
@@ -114,17 +122,26 @@ checkAnswerBtn.addEventListener("click", () => {
   }
 });
 
+// ===== 次の問題 =====
 nextBtn.addEventListener("click", () => {
   if (currentIndex < sankakuhiQuestions.length - 1) {
     currentIndex++;
+
+    // ✅ ここで保存
+    localStorage.setItem("sankaku-progress", currentIndex);
+
     renderQuestion();
   } else {
     alert("三角比30問おつかれさま！");
   }
 });
 
+// ===== やり直し =====
 resetBtn.addEventListener("click", () => {
   renderQuestion();
 });
 
+// ===== 初期表示 =====
 renderQuestion();
+let currentIndex = 0;
+

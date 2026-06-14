@@ -1,6 +1,7 @@
 let currentIndex = 0;
 
-const levelBadge = document.getElementById("levelBadge");const levelBadge = document.getElementBy document.getElementById("metaText");
+const levelBadge = document.getElementById("levelBadge");
+const metaText = document.getElementById("metaText");
 const questionText = document.getElementById("questionText");
 const thinkingPrompt = document.getElementById("thinkingPrompt");
 const thinkingChoices = document.getElementById("thinkingChoices");

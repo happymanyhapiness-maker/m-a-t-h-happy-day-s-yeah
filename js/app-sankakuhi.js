@@ -127,4 +127,3 @@ resetBtn.addEventListener("click", () => {
   renderQuestion();
 });
 
-renderQuestion();

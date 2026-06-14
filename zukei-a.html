@@ -1,58 +1,82 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>数学A 図形の性質</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content数学A 図形の性質</title>  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body class="theme-zukei">
+
   <main class="app-shell">
+
+    <!-- ヘッダー -->
     <header class="topbar">
-      <a href="index.html" class="back-link">← 戻る</a>
+      <a href="./index.html" class="back-link">← 戻る</a>
       <div>
-        <h1>数学A 図形の性質</h1>
-        <p>次にここを作っていく</p>
+        <h1>図形の性質</h1>
+        <p id="metaText">Lv1 / Q1</p>
       </div>
     </header>
 
-<section class="card question-card">
-  <div class="pill" id="levelBadge">Lv1</div>
-  <h2 id="questionTitle">問題</h2>
-  <p id="questionText"></p>
-</section>
+    <!-- 問題カード -->
+    <section class="card question-card">
+      <div class="pill" id="levelBadge">Lv1</div>
+      <h2 id="questionTitle">問題</h2>
+      <p id="questionText"></p>
+    </section>
 
-<section class="card">
-  <h3>① 考え方を選ぶ</h3>
-  <p id="thinkingPrompt"></p>
-  <div id="thinkingChoices" class="choice-list"></div>
-  <button id="checkThinkingBtn" class="btn primary">考え方を判定する</button>
-  <div id="thinkingResult" class="feedback"></div>
-</section>
+    <!-- 思考ステップ -->
+    <section class="card">
+      <h3>① 考え方を選ぶ</h3>
+      <p id="thinkingPrompt"></p>
+      <div id="thinkingChoices" class="choice-list"></div>
 
-<section class="card hidden" id="answerSection">
-  <h3>② 答えを選ぶ</h3>
-  <p id="answerPrompt"></p>
-  <div id="answerChoices" class="choice-list"></div>
-  <button id="checkAnswerBtn" class="btn primary">答えを判定する</button>
-  <div id="answerResult" class="feedback"></div>
-</section>
+      <button id="checkThinkingBtn" class="btn primary">
+        考え方を判定する
+      </button>
 
-<section class="card footer-card">
-  <div class="progress-wrap">
-    <div class="progress-bar">
-      <div id="progressFill" class="progress-fill"></div>
-    </div>
-    <p id="progressText">1 / 10</p>
-  </div>
+      <div id="thinkingResult" class="feedback"></div>
+    </section>
 
-  <div class="button-row">
-    <button id="nextBtn" class="btn secondary" disabled>次の問題へ</button>
-    <button id="resetBtn" class="btn ghost">この問題をやり直す</button>
-  </div>
-</section>
+    <!-- 答えステップ -->
+    <section class="card hidden" id="answerSection">
+      <h3>② 答えを選ぶ</h3>
+      <p id="answerPrompt"></p>
+      <div id="answerChoices" class="choice-list"></div>
+
+      <button id="checkAnswerBtn" class="btn primary">
+        答えを判定する
+      </button>
+
+      <div id="answerResult" class="feedback"></div>
+    </section>
+
+    <!-- フッター（進捗＋ボタン） -->
+    <section class="card footer-card">
+
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="progressText">1 / 10</p>
+      </div>
+
+      <div class="button-row">
+        <button id="nextBtn" class="btn secondary" disabled>
+          次の問題へ
+        </button>
+
+        <button id="resetBtn" class="btn ghost">
+          やり直す
+        </button>
+      </div>
+
+    </section>
+
   </main>
 
+  <!-- JS（順番重要） -->
   <script src="./js/questions-zukei-a.js"></script>
   <script src="./js/app-zukei-a.js"></script>
 

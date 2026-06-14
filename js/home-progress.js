@@ -1,4 +1,5 @@
-// 三角比// = document.getElementById("resume-sankaku");
+// 三角比
+const sankakuEl = document.getElementById("resume-sankaku");
 const sankaku = localStorage.getItem("sankaku-progress");
 
 if (sankakuEl) {
@@ -20,4 +21,3 @@ if (zukeiEl) {
     zukeiEl.textContent = "未開始";
   }
 }
-``

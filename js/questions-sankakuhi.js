@@ -126,3 +126,6 @@ nextBtn.addEventListener("click", () => {
 resetBtn.addEventListener("click", () => {
   renderQuestion();
 });
+
+console.log("questions loaded");
+console.log(sankakuhiQuestions);

@@ -16,12 +16,45 @@
       </div>
     </header>
 
-    <section class="card">
-      <h2>準備中</h2>
-      <p>
-        このページには今後、外心・内心・重心・角の二等分線・チェバ・メネラウス・円周角・方べき などのドリルを追加します。
-      </p>
-    </section>
+<section class="card question-card">
+  <div class="pill" id="levelBadge">Lv1</div>
+  <h2 id="questionTitle">問題</h2>
+  <p id="questionText"></p>
+</section>
+
+<section class="card">
+  <h3>① 考え方を選ぶ</h3>
+  <p id="thinkingPrompt"></p>
+  <div id="thinkingChoices" class="choice-list"></div>
+  <button id="checkThinkingBtn" class="btn primary">考え方を判定する</button>
+  <div id="thinkingResult" class="feedback"></div>
+</section>
+
+<section class="card hidden" id="answerSection">
+  <h3>② 答えを選ぶ</h3>
+  <p id="answerPrompt"></p>
+  <div id="answerChoices" class="choice-list"></div>
+  <button id="checkAnswerBtn" class="btn primary">答えを判定する</button>
+  <div id="answerResult" class="feedback"></div>
+</section>
+
+<section class="card footer-card">
+  <div class="progress-wrap">
+    <div class="progress-bar">
+      <div id="progressFill" class="progress-fill"></div>
+    </div>
+    <p id="progressText">1 / 10</p>
+  </div>
+
+  <div class="button-row">
+    <button id="nextBtn" class="btn secondary" disabled>次の問題へ</button>
+    <button id="resetBtn" class="btn ghost">この問題をやり直す</button>
+  </div>
+</section>
   </main>
+
+  <script src="./js/questions-zukei-a.js"></script>
+  <script src="./js/app-zukei-a.js"></script>
+
 </body>
 </html>

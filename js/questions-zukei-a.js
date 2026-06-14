@@ -43,7 +43,7 @@ const zukeiAQuestions = [
       "3本の角の二等分線の交点"
     ],
     correctAnswer: 0,
-    explanation: "外心は3辺の垂直二等分線の交点で、外接円の中心になる。"
+    explanation: "外心は三角形の3辺の垂直二等分線の交点で、外接円の中心になる。"
   },
   {
     id: 3,
@@ -66,13 +66,13 @@ const zukeiAQuestions = [
       "3本の中線の交点"
     ],
     correctAnswer: 0,
-    explanation: "内心は3つの角の二等分線の交点で、内接円の中心になる。"
+    explanation: "内心は三角形の3つの角の二等分線の交点で、内接円の中心になる。"
   },
   {
     id: 4,
     level: "Lv1",
     question: "三角形ABCの重心Gは、中線をどの比で内分するか。",
-    thinkingPrompt: "頂点側と中点側の比を思い出そう。",
+    thinkingPrompt: "頂点側と辺の中点側の比を思い出そう。",
     thinkingChoices: ["2:1", "1:1", "3:1", "1:2"],
     correctThinking: 0,
     thinkingFeedback: [
@@ -81,10 +81,10 @@ const zukeiAQuestions = [
       "❌ 取り違えている。",
       "❌ 逆になっている。"
     ],
-    answerPrompt: "頂点から重心、重心から辺の中点までの比はどれ？",
+    answerPrompt: "頂点から重心G、重心Gから反対側の辺の中点までの比はどれ？",
     answerChoices: ["2:1", "1:1", "3:1", "1:2"],
     correctAnswer: 0,
-    explanation: "重心は各中線を頂点側:中点側=2:1に内分する。"
+    explanation: "重心は各中線を、頂点側 : 辺の中点側 = 2 : 1 に内分する。"
   },
   {
     id: 5,
@@ -135,7 +135,7 @@ const zukeiAQuestions = [
       "3つの角を等しくする"
     ],
     correctAnswer: 0,
-    explanation: "内心は3辺からの距離が等しい点。"
+    explanation: "内心は三角形の3辺からの距離が等しい点。"
   },
   {
     id: 7,
@@ -158,30 +158,30 @@ const zukeiAQuestions = [
       "3つの角を等しくする"
     ],
     correctAnswer: 0,
-    explanation: "外心は3頂点から等距離にあり、外接円の中心になる。"
+    explanation: "外心は三角形の3つの頂点から等距離にあり、外接円の中心になる。"
   },
   {
     id: 8,
     level: "Lv2",
-    question: "三角形ABCで、点Dが辺BC上にあり、ADが∠Aの二等分線である。AB=6, AC=9 のとき、BD:DC を求めよ。",
+    question: "三角形ABCにおいて、点Dは辺BC上の点であり、線分ADは角Aの二等分線である。辺AB=6、辺AC=9 のとき、辺BDと辺DCの長さの比を求めよ。",
     thinkingPrompt: "どの定理に注目する？",
     thinkingChoices: ["角の二等分線の定理", "中点連結定理", "チェバの定理", "メネラウスの定理"],
     correctThinking: 0,
     thinkingFeedback: [
-      "✅ 正解！AB:AC = BD:DC を使える。",
+      "✅ 正解！辺AB:辺AC = 辺BD:辺DC を使える。",
       "❌ 平行線の話ではない。",
       "❌ 1点に集まる条件の話ではない。",
       "❌ 一直線上の条件の話ではない。"
     ],
-    answerPrompt: "BD:DC はどれ？",
+    answerPrompt: "辺BD : 辺DC はどれ？",
     answerChoices: ["2:3", "3:2", "6:9", "1:1"],
     correctAnswer: 0,
-    explanation: "角の二等分線の定理より AB:AC = BD:DC = 6:9 = 2:3。"
+    explanation: "角の二等分線の定理より、AB:AC = BD:DC = 6:9 = 2:3。"
   },
   {
     id: 9,
     level: "Lv2",
-    question: "三角形ABCで、ABの中点をM、ACの中点をNとする。MNとBCの関係として正しいものを1つ選べ。",
+    question: "三角形ABCにおいて、点Mは辺ABの中点、点Nは辺ACの中点とする。線分MNと辺BCの関係として正しいものを1つ選べ。",
     thinkingPrompt: "中点連結定理に注目しよう。",
     thinkingChoices: [
       "MNはBCに平行で、長さはBCの半分",
@@ -204,7 +204,7 @@ const zukeiAQuestions = [
   {
     id: 10,
     level: "Lv2",
-    question: "三角形ABCで、ABの中点をM、ACの中点をNとする。BC=10 のとき、MN の長さを求めよ。",
+    question: "三角形ABCにおいて、点Mは辺ABの中点、点Nは辺ACの中点とする。辺BC=10 のとき、線分MNの長さを求めよ。",
     thinkingPrompt: "どの定理を使う？",
     thinkingChoices: ["中点連結定理", "角の二等分線の定理", "チェバの定理", "メネラウスの定理"],
     correctThinking: 0,
@@ -222,7 +222,7 @@ const zukeiAQuestions = [
   {
     id: 11,
     level: "Lv2",
-    question: "円O上の相異なる3点A,B,Cについて、∠AOC=80° とする。弧ACに対する円周角 ∠ABC を求めよ。",
+    question: "円O上に相異なる3点A、B、Cがある。中心角AOC=80° のとき、弧ACに対する円周角 ∠ABC を求めよ。",
     thinkingPrompt: "どの角の関係を使う？",
     thinkingChoices: ["中心角と円周角", "接弦定理", "方べきの定理", "チェバの定理"],
     correctThinking: 0,
@@ -258,7 +258,7 @@ const zukeiAQuestions = [
   {
     id: 13,
     level: "Lv2",
-    question: "四角形ABCDが円に内接しているとき、∠A=70° である。∠C を求めよ。",
+    question: "四角形ABCDは円に内接している。角A=70° のとき、角C を求めよ。",
     thinkingPrompt: "どの性質を使う？",
     thinkingChoices: ["円に内接する四角形の対角の和", "中心角と円周角", "中点連結定理", "角の二等分線の定理"],
     correctThinking: 0,
@@ -268,7 +268,7 @@ const zukeiAQuestions = [
       "❌ 中点の話ではない。",
       "❌ 辺の比の話ではない。"
     ],
-    answerPrompt: "∠C はどれ？",
+    answerPrompt: "角C はどれ？",
     answerChoices: ["110°", "70°", "90°", "180°"],
     correctAnswer: 0,
     explanation: "円に内接する四角形では対角の和が180°なので、∠C = 180° - 70° = 110°。"
@@ -276,7 +276,7 @@ const zukeiAQuestions = [
   {
     id: 14,
     level: "Lv2",
-    question: "四角形ABCDが円に内接しているとき、∠B=95° である。∠D を求めよ。",
+    question: "四角形ABCDは円に内接している。角B=95° のとき、角D を求めよ。",
     thinkingPrompt: "どの角の関係に注目する？",
     thinkingChoices: ["対角の和が180°", "隣り合う角が等しい", "中心角の半分", "外角は内角に等しい"],
     correctThinking: 0,
@@ -286,7 +286,7 @@ const zukeiAQuestions = [
       "❌ ここでは使わない。",
       "❌ 一般には成り立たない。"
     ],
-    answerPrompt: "∠D はどれ？",
+    answerPrompt: "角D はどれ？",
     answerChoices: ["85°", "95°", "90°", "180°"],
     correctAnswer: 0,
     explanation: "対角の和が180°なので、∠D = 180° - 95° = 85°。"
@@ -330,7 +330,7 @@ const zukeiAQuestions = [
   {
     id: 17,
     level: "Lv3",
-    question: "点Pから円に2本の接線PA, PBを引く。PA=7 のとき、PB の長さを求めよ。",
+    question: "点Pから円に2本の接線PA、PBを引く。PA=7 のとき、PB の長さを求めよ。",
     thinkingPrompt: "接線の長さの性質に注目しよう。",
     thinkingChoices: ["同一点から引いた2本の接線の長さ", "中心角と円周角", "方べきの定理の積", "中点連結定理"],
     correctThinking: 0,
@@ -348,7 +348,7 @@ const zukeiAQuestions = [
   {
     id: 18,
     level: "Lv3",
-    question: "点Pから円に2本の接線PA, PBを引く。PA=10 のとき、PB の長さを求めよ。",
+    question: "点Pから円に2本の接線PA、PBを引く。PA=10 のとき、PB の長さを求めよ。",
     thinkingPrompt: "どの性質を使う？",
     thinkingChoices: ["接線の長さは等しい", "円周角の性質", "方べきの定理", "メネラウスの定理"],
     correctThinking: 0,
@@ -361,12 +361,12 @@ const zukeiAQuestions = [
     answerPrompt: "PB の長さはどれ？",
     answerChoices: ["10", "20", "5", "0"],
     correctAnswer: 0,
-    explanation: "接線PA, PBは同じ点Pから引いているので PA = PB = 10。"
+    explanation: "接線PA、PBは同じ点Pから引いているので PA = PB = 10。"
   },
   {
     id: 19,
     level: "Lv3",
-    question: "点Pから円に引いた1本の割線が円とA, Bで交わり、PA=3, PB=12 である。別の割線が円とC, Dで交わり、PC=4 のとき、PD を求めよ。",
+    question: "点Pから円に引いた1本の割線が円とA、Bで交わり、PA=3、PB=12 である。別の割線が円とC、Dで交わり、PC=4 のとき、PD を求めよ。",
     thinkingPrompt: "どの定理が使える？",
     thinkingChoices: ["方べきの定理", "接弦定理", "チェバの定理", "中点連結定理"],
     correctThinking: 0,
@@ -384,7 +384,7 @@ const zukeiAQuestions = [
   {
     id: 20,
     level: "Lv3",
-    question: "点Pから円に引いた1本の割線が円とA, Bで交わり、PA=2, PB=15 である。別の割線が円とC, Dで交わり、PC=5 のとき、PD を求めよ。",
+    question: "点Pから円に引いた1本の割線が円とA、Bで交わり、PA=2、PB=15 である。別の割線が円とC、Dで交わり、PC=5 のとき、PD を求めよ。",
     thinkingPrompt: "どの積が等しくなる？",
     thinkingChoices: ["PA×PB と PC×PD", "PA+PB と PC+PD", "PA-PB と PC-PD", "PA² と PC²"],
     correctThinking: 0,
@@ -402,7 +402,7 @@ const zukeiAQuestions = [
   {
     id: 21,
     level: "Lv3",
-    question: "点Pから円に接線PTと割線PABを引く。PT=6, PA=3 のとき、PB を求めよ。",
+    question: "点Pから円に接線PTと割線PABを引く。PT=6、PA=3 のとき、PB を求めよ。",
     thinkingPrompt: "どの定理が使える？",
     thinkingChoices: ["方べきの定理", "接弦定理", "円周角の定理", "メネラウスの定理"],
     correctThinking: 0,
@@ -420,7 +420,7 @@ const zukeiAQuestions = [
   {
     id: 22,
     level: "Lv3",
-    question: "点Pから円に接線PTと割線PABを引く。PT=8, PA=4 のとき、PB を求めよ。",
+    question: "点Pから円に接線PTと割線PABを引く。PT=8、PA=4 のとき、PB を求めよ。",
     thinkingPrompt: "どの式に注目する？",
     thinkingChoices: ["PT² = PA×PB", "PT = PA+PB", "PT = PA-PB", "PT² = PA+PB"],
     correctThinking: 0,
@@ -438,7 +438,7 @@ const zukeiAQuestions = [
   {
     id: 23,
     level: "Lv3",
-    question: "三角形ABCで、辺BC上に点D、辺CA上に点E、辺AB上に点Fをとる。AD, BE, CF が1点で交わる条件を扱う定理はどれ？",
+    question: "三角形ABCにおいて、点Dは辺BC上の点、点Eは辺CA上の点、点Fは辺AB上の点である。線分AD、BE、CF が1点で交わる条件を扱う定理はどれ？",
     thinkingPrompt: "1点に集まる条件か、一直線上の条件かを区別しよう。",
     thinkingChoices: ["チェバの定理", "メネラウスの定理", "中点連結定理", "接弦定理"],
     correctThinking: 0,
@@ -456,7 +456,7 @@ const zukeiAQuestions = [
   {
     id: 24,
     level: "Lv3",
-    question: "三角形ABCで、辺BC上に点D、CA上に点E、ABの延長上に点Fをとる。D, E, F が一直線上にある条件を扱う定理はどれ？",
+    question: "三角形ABCにおいて、点Dは辺BC上の点、点Eは辺CA上の点、点Fは辺ABの延長上の点である。3点D、E、F が一直線上にある条件を扱う定理はどれ？",
     thinkingPrompt: "一直線上の条件に注目しよう。",
     thinkingChoices: ["メネラウスの定理", "チェバの定理", "角の二等分線の定理", "中点連結定理"],
     correctThinking: 0,
@@ -510,7 +510,7 @@ const zukeiAQuestions = [
   {
     id: 27,
     level: "Lv3",
-    question: "三角形ABCで、点Dが辺BC上にあり、ADが∠Aの二等分線である。AB=8, AC=12 のとき、BD:DC を求めよ。",
+    question: "三角形ABCにおいて、点Dは辺BC上の点であり、線分ADは角Aの二等分線である。辺AB=8、辺AC=12 のとき、辺BDと辺DCの長さの比を求めよ。",
     thinkingPrompt: "どの比が等しくなる？",
     thinkingChoices: ["AB:AC = BD:DC", "AB:AC = AD:DC", "AB:BC = BD:DC", "AC:BC = BD:DC"],
     correctThinking: 0,
@@ -520,7 +520,7 @@ const zukeiAQuestions = [
       "❌ 辺BCは直接入らない。",
       "❌ その形ではない。"
     ],
-    answerPrompt: "BD:DC はどれ？",
+    answerPrompt: "辺BD : 辺DC はどれ？",
     answerChoices: ["2:3", "3:2", "8:12", "1:1"],
     correctAnswer: 0,
     explanation: "AB:AC = BD:DC = 8:12 = 2:3。"
@@ -528,7 +528,7 @@ const zukeiAQuestions = [
   {
     id: 28,
     level: "Lv3",
-    question: "三角形ABCで、ABの中点をM、ACの中点をNとする。MN=7 のとき、BC の長さを求めよ。",
+    question: "三角形ABCにおいて、点Mは辺ABの中点、点Nは辺ACの中点とする。線分MN=7 のとき、辺BC の長さを求めよ。",
     thinkingPrompt: "どの定理を使う？",
     thinkingChoices: ["中点連結定理", "チェバの定理", "メネラウスの定理", "方べきの定理"],
     correctThinking: 0,
@@ -538,7 +538,7 @@ const zukeiAQuestions = [
       "❌ 一直線上の話ではない。",
       "❌ 円の定理ではない。"
     ],
-    answerPrompt: "BC の長さはどれ？",
+    answerPrompt: "辺BC の長さはどれ？",
     answerChoices: ["14", "7", "3.5", "21"],
     correctAnswer: 0,
     explanation: "中点連結定理より BC = 2×MN = 14。"
@@ -546,7 +546,7 @@ const zukeiAQuestions = [
   {
     id: 29,
     level: "Lv3",
-    question: "円O上の4点A, B, C, Dで四角形ABCDが円に内接している。∠A=55° のとき、∠C を求めよ。",
+    question: "円O上の4点A、B、C、Dで四角形ABCDが円に内接している。角A=55° のとき、角C を求めよ。",
     thinkingPrompt: "どの角の関係に注目する？",
     thinkingChoices: ["対角の和", "隣角の和", "中心角は2倍", "接弦定理"],
     correctThinking: 0,
@@ -556,7 +556,7 @@ const zukeiAQuestions = [
       "❌ ここでは四角形の性質。",
       "❌ 接線はない。"
     ],
-    answerPrompt: "∠C はどれ？",
+    answerPrompt: "角C はどれ？",
     answerChoices: ["125°", "55°", "90°", "110°"],
     correctAnswer: 0,
     explanation: "円に内接する四角形では対角の和が180°なので、∠C = 180° - 55° = 125°。"
@@ -564,7 +564,7 @@ const zukeiAQuestions = [
   {
     id: 30,
     level: "Lv3",
-    question: "点Pから円に引いた1本の割線が円とA, Bで交わり、PA=4, PB=9 である。別の割線が円とC, Dで交わり、PC=6 のとき、PD を求めよ。",
+    question: "点Pから円に引いた1本の割線が円とA、Bで交わり、PA=4、PB=9 である。別の割線が円とC、Dで交わり、PC=6 のとき、PD を求めよ。",
     thinkingPrompt: "どの関係式を使う？",
     thinkingChoices: ["PA×PB = PC×PD", "PA+PB = PC+PD", "PA-PB = PC-PD", "PA² = PC²"],
     correctThinking: 0,

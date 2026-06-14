@@ -2,32 +2,66 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport  <title>数ⅠA 図形ドリル</title>  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数ⅠA 図形ドリル</title>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body class="theme-home">
   <main class="home">
 
-    <header class="home-header">
+    <header class="hero-header">
+      <div class="hero-badge">STUDY QUEST</div>
       <h1>数ⅠA 図形ドリル</h1>
-      <p>図形が苦手でも、考え方から身につける。</p>
+      <p class="hero-text">
+        問題を解いて、考え方を鍛える。<br>
+        小さく進んで、確実に強くなる。
+      </p>
     </header>
+
+    <section class="status-panel">
+      <div class="status-card">
+        <div class="status-label">今日のミッション</div>
+        <div class="status-value">1テーマ進める</div>
+      </div>
+
+      <div class="status-card">
+        <div class="status-label">おすすめ順</div>
+        <div class="status-value">三角比 → 図形の性質</div>
+      </div>
+    </section>
 
     <section class="menu-grid">
 
-      <!-- 三角比 -->
       <a class="menu-card sankaku" href="./sankakuhi.html">
-        <h2>三角比・図形と計量</h2>
-        <p>面積公式・正弦定理・余弦定理を基礎から練習</p>
+        <div class="card-icon">△</div>
+        <div class="card-body">
+          <div class="card-tag">STAGE 1</div>
+          <h2>三角比・図形と計量</h2>
+          <p>面積公式・正弦定理・余弦定理を基礎から練習</p>
+        </div>
+        <div class="card-arrow">▶</div>
       </a>
 
-      <!-- 図形A -->
       <a class="menu-card zukei" href="./zukei-a.html">
-        <h2>数学A：図形の性質</h2>
-        <p>外心・内心・重心・チェバ・メネラウスなど</p>
+        <div class="card-icon">⬡</div>
+        <div class="card-body">
+          <div class="card-tag">STAGE 2</div>
+          <h2>数学A：図形の性質</h2>
+          <p>外心・内心・重心・チェバ・メネラウスなど</p>
+        </div>
+        <div class="card-arrow">▶</div>
       </a>
 
+    </section>
+
+    <section class="tip-panel">
+      <h3>攻略のコツ</h3>
+      <ul>
+        <li>まず「何が与えられているか」を見る</li>
+        <li>次に「どの考え方を使うか」を決める</li>
+        <li>最後に答えを選ぶ</li>
+      </ul>
     </section>
 
   </main>

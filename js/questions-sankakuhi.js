@@ -198,7 +198,7 @@ const sankakuhiQuestions = [
       "❌ 面積を求める問題ではない。",
       "❌ まずは定理を使う。"
     ],
-    answerPrompt: "辺CAの長さはどれ？",
+    answerPrompt: "辺CAはどれ？",
     answerChoices: ["6√2", "3√2", "6√3", "12"],
     correctAnswer: 0,
     explanation: "正弦定理より CA / sin45° = BC / sin30°。よって CA = 6√2"

@@ -3,7 +3,6 @@ let currentIndex = 0;
 
 const savedIndex = localStorage.getItem("zukei-progress");
   currentIndex = Number(savedIndex);
-}
 
 // ===== 要素取得 =====
 const levelBadge = document.getElementById("levelBadge");

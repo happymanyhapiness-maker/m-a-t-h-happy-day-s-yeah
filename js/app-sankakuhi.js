@@ -119,7 +119,7 @@ nextBtn.addEventListener("click", () => {
     currentIndex++;
     renderQuestion();
   } else {
-    alert("三角比30問おつかれさま！");
+    alert("三角比ドリルおつかれさま！");
   }
 });
 

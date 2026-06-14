@@ -1,131 +1,76 @@
-let currentIndex = 0;
+const sankakuhiQuestions = [
+  {
+    id: 1,
+    level: "Lv1",
+    question: "三角形ABCにおいて、辺 b=6, c=8、その間の角 A=30° とする。この三角形の面積を求めよ。",
+    thinkingPrompt: "まず何に注目する？",
+    thinkingChoices: [
+      "2辺とその間の角",
+      "3辺の長さ",
+      "辺と向かいの角",
+      "面積が与えられている"
+    ],
+    correctThinking: 0,
+    thinkingFeedback: [
+      "✅ 正解！2辺とその間の角から面積公式が使える。",
+      "❌ 3辺は与えられていない。",
+      "❌ 今回は向かい合う対応ではない。",
+      "❌ 面積はこれから求める。"
+    ],
+    answerPrompt: "面積はどれ？",
+    answerChoices: ["12", "24", "6", "8"],
+    correctAnswer: 0,
+    explanation: "S = 1/2 × 6 × 8 × sin30° = 12"
+  },
 
-const levelBadge = document.getElementById("levelBadge");
-const metaText = document.getElementById("metaText");
-const questionText = document.getElementById("questionText");
-const thinkingPrompt = document.getElementById("thinkingPrompt");
-const thinkingChoices = document.getElementById("thinkingChoices");
-const thinkingResult = document.getElementById("thinkingResult");
-const answerSection = document.getElementById("answerSection");
-const answerPrompt = document.getElementById("answerPrompt");
-const answerChoices = document.getElementById("answerChoices");
-const answerResult = document.getElementById("answerResult");
-const checkThinkingBtn = document.getElementById("checkThinkingBtn");
-const checkAnswerBtn = document.getElementById("checkAnswerBtn");
-const nextBtn = document.getElementById("nextBtn");
-const resetBtn = document.getElementById("resetBtn");
-const progressFill = document.getElementById("progressFill");
-const progressText = document.getElementById("progressText");
+  {
+    id: 2,
+    level: "Lv1",
+    question: "三角形ABCにおいて、b=5, c=7, A=60° とする。面積を求めよ。",
+    thinkingPrompt: "何を使う？",
+    thinkingChoices: [
+      "面積公式",
+      "正弦定理",
+      "余弦定理",
+      "三平方の定理"
+    ],
+    correctThinking: 0,
+    thinkingFeedback: [
+      "✅ 正解！",
+      "❌ 今回は違う。",
+      "❌ 今回は不要。",
+      "❌ 直角ではない。"
+    ],
+    answerPrompt: "面積はどれ？",
+    answerChoices: ["35√3/4", "35/2", "7√3", "35√2/4"],
+    correctAnswer: 0,
+    explanation: "S = 1/2 × 5 × 7 × sin60° = 35√3/4"
+  },
 
-function renderQuestion() {
-  const q = sankakuhiQuestions[currentIndex]; // ← 修正
-
-  levelBadge.textContent = q.level;
-  metaText.textContent = `${q.level} / Q${q.id}`;
-  questionText.textContent = q.question;
-  thinkingPrompt.textContent = q.thinkingPrompt;
-  answerPrompt.textContent = q.answerPrompt;
-
-  thinkingChoices.innerHTML = "";
-  answerChoices.innerHTML = "";
-
-  q.thinkingChoices.forEach((choice, index) => {
-    thinkingChoices.innerHTML += `
-      <div class="choice-item">
-        <label>
-          <input type="radio" name="thinking" value="${index}">
-          <span>${choice}</span>
-        </label>
-      </div>
-    `;
-  });
-
-  q.answerChoices.forEach((choice, index) => {
-    answerChoices.innerHTML += `
-      <div class="choice-item">
-        <label>
-          <input type="radio" name="answer" value="${index}">
-          <span>${choice}</span>
-        </label>
-      </div>
-    `;
-  });
-
-  thinkingResult.className = "feedback";
-  thinkingResult.textContent = "";
-  answerResult.className = "feedback";
-  answerResult.textContent = "";
-  answerSection.classList.add("hidden");
-  nextBtn.disabled = true;
-
-  updateProgress();
-}
-
-function updateProgress() {
-  const total = sankakuhiQuestions.length;
-  const current = currentIndex + 1;
-  progressText.textContent = `${current} / ${total}`;
-  progressFill.style.width = `${(current / total) * 100}%`;
-}
-
-checkThinkingBtn.addEventListener("click", () => {
-  const q = sankakuhiQuestions[currentIndex];
-  const selected = document.querySelector('input[name="thinking"]:checked');
-
-  if (!selected) {
-    thinkingResult.className = "feedback ng";
-    thinkingResult.textContent = "考え方を1つ選んでください。";
-    return;
+  {
+    id: 3,
+    level: "Lv1",
+    question: "三角形ABCにおいて、a=3, A=30°, B=60° とする。辺 b を求めよ。",
+    thinkingPrompt: "どの定理？",
+    thinkingChoices: [
+      "正弦定理",
+      "余弦定理",
+      "面積公式",
+      "三平方の定理"
+    ],
+    correctThinking: 0,
+    thinkingFeedback: [
+      "✅ 正解！",
+      "❌ 条件不足。",
+      "❌ 面積ではない。",
+      "❌ 直角ではない。"
+    ],
+    answerPrompt: "辺 b はどれ？",
+    answerChoices: ["3√3", "6√3", "3", "3/2"],
+    correctAnswer: 0,
+    explanation: "b = 3 × sin60° / sin30° = 3√3"
   }
-
-  const selectedIndex = Number(selected.value);
-  const isCorrect = selectedIndex === q.correctThinking;
-
-  thinkingResult.className = `feedback ${isCorrect ? "ok" : "ng"}`;
-  thinkingResult.textContent = q.thinkingFeedback[selectedIndex];
-
-  if (isCorrect) {
-    answerSection.classList.remove("hidden");
-  } else {
-    answerSection.classList.add("hidden");
-  }
-});
-
-checkAnswerBtn.addEventListener("click", () => {
-  const q = sankakuhiQuestions[currentIndex];
-  const selected = document.querySelector('input[name="answer"]:checked');
-
-  if (!selected) {
-    answerResult.className = "feedback ng";
-    answerResult.textContent = "答えを1つ選んでください。";
-    return;
-  }
-
-  const selectedIndex = Number(selected.value);
-  const isCorrect = selectedIndex === q.correctAnswer;
-
-  answerResult.className = `feedback ${isCorrect ? "ok" : "ng"}`;
-  answerResult.textContent = isCorrect
-    ? `✅ 正解！ ${q.explanation}`
-    : `❌ 不正解。正しい答えは「${q.answerChoices[q.correctAnswer]}」。 ${q.explanation}`;
-
-  if (isCorrect) {
-    nextBtn.disabled = false;
-  }
-});
-
-nextBtn.addEventListener("click", () => {
-  if (currentIndex < sankakuhiQuestions.length - 1) {
-    currentIndex++;
-    renderQuestion();
-  } else {
-    alert("三角比30問おつかれさま！");
-  }
-});
-
-resetBtn.addEventListener("click", () => {
-  renderQuestion();
-});
+];
 
 console.log("questions loaded");
 console.log(sankakuhiQuestions);

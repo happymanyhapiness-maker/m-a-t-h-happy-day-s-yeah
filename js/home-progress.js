@@ -21,3 +21,15 @@ if (zukeiEl) {
     zukeiEl.textContent = "未開始";
   }
 }
+const resetBtn = document.getElementById("reset-all");
+
+if (resetBtn) {
+  resetBtn.addEventListener("click", () => {
+    localStorage.removeItem("sankaku-progress");
+    localStorage.removeItem("zukei-progress");
+
+    alert("進捗をリセットしました");
+
+    location.reload(); // 表示更新
+  });
+}

@@ -138,9 +138,12 @@ function renderQuestion() {
   thinkingChoices.innerHTML = "";
   answerChoices.innerHTML = "";
 
-  q.thinkingChoices.forEach((choice, index) => {
-    thinkingChoices.innerHTML += `
-      <div class="choice-item">
-        <label>
-          <input type="radio" name="thinking" value="${index}">
-          <span>${choice}</span>
+q.thinkingChoices.forEach((choice, index) => {
+  thinking">  thinkingChoices.innerHTML += `
+      <label>
+        <input type="radio" name="thinking" value="${index}">
+        <span>${choice}</span>
+      </label>
+    </div>
+  `;
+});
